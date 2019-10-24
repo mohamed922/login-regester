@@ -1,0 +1,15 @@
+{
+  "development":  {
+     "PORT" : 3000 ,
+     "DB_URI" : "mongodb://localhost:27017/MeanStackDB" ,
+     "secret_token" : "mohamed",
+     "token_exp" : "2h"
+},
+"production":  {
+    "PORT" : 80 ,
+    "DB_URI" : "mongodb://xxxxxxx/name",
+    "secret_token" : "mohamed" ,
+    "token_exp" : "2h"
+}
+
+} 

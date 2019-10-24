@@ -1,0 +1,36 @@
+
+
+<form class="example-form" #signupForm="ngForm" (ngSubmit)="signupForm.valid && onsubmit(signupForm)">
+        <h1 class='center'> Register  </h1>
+        <div  >
+              <img class="center-img" src="../../../assets/img/register.png"/>
+        </div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="FullName" #fullName = "ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName"
+             [errorStateMatcher]="matcher" autocomplete="none" required>
+             <mat-error *ngIf="!fullName.valid && signupForm.submitted"> name is required</mat-error >
+    </mat-form-field>
+       
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" #email = "ngModel" [(ngModel)]="userService.selectedUser.email" name="email"
+               [errorStateMatcher]="matcher" autocomplete="none" required [pattern] = "emailregx" >
+               <mat-error *ngIf ="!email.valid && signupForm.submitted"> email is required</mat-error >
+                <mat-error *ngIf ="email.errors.pattern && signupForm.submitted"> email is not valid</mat-error >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" #password = "ngModel"  [(ngModel)]="userService.selectedUser.password" name="password"
+               [errorStateMatcher]="matcher" autocomplete="none" required  minlength="4">
+               <mat-error *ngIf ="!password.valid && signupForm.submitted"> password is required</mat-error >
+                <mat-error *ngIf ="!password.errors.minlength && signupForm.submitted"> password is less than 4 char</mat-error >
+      </mat-form-field>
+      <button mat-raised-button color="primary">Register</button>
+      
+      
+  </form>
+  
+  <div class="success" *ngIf="successMessage">
+        registered successfully
+  </div>
+  <div class="alert" *ngIf="errorMessage">
+        {{errorMessage}}
+  </div>

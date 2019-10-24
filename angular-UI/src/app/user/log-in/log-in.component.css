@@ -1,0 +1,40 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: honeydew;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .mat-raised-button {
+      margin-top : 15px
+  }
+  .success {
+    background-color : green ;
+    color : white ;
+    margin : 10px auto ;
+    text-align : center ;
+    height : 30px ;
+    border-radius : 5px
+  }
+  .alert {
+    background-color : red ;
+    color : white ;
+    margin :  auto;
+    text-align : center ;
+    height : 30px ;
+    border-radius : 5px
+  }
+  .center {
+    text-align: center;
+    color:rgb(221, 103, 103)
+  }
+  .center-img {
+    display: block;
+    margin: auto;
+  }
